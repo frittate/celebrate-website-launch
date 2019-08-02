@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Celebrate Website Launch!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./dist/css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="yay-toast" id="yay-toast">
+      <p class="yay-toast__message">
+        Your URL should start with 'www', 'https://' or 'http://'
+      </p>
+    </div>
+    <div class="yay-wrapper">
+      <h1>Celebrate the launch of your new homepage!</h1>
+      <div class="yay-options__container">
+        <h2>What's the url of the new page?</h2>
+        <div class="yay-options__input">
+          <input type="text" id="yay-options__input--url" placeholder="www.myawesomepage.com">
+        </div>
+        <h2>Choose a theme</h2>
+        <select name="" id="yay-options__input--theme">
+          <option value="fireworks">Fireworks</option>
+          <option value="confetti">Confetti</option>
+        </select>
+
+      </div>
+      <button class="yay-button" id="yay-button" disabled>
+        Celebrate the launch of my page!
+      </button>
+    </div>
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <script src="./src/index.js" async defer></script>
+  </body>
+</html>
