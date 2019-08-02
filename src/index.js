@@ -40,7 +40,9 @@ let view = {
     }
   },
   goToResult: function(){
-    let resultURL = new URL(`${window.location.hostname}/result.html?url=null&theme=null`)
+    let resultURL = new URL(
+      'https://celebrate-website-launch.netlify.com//result.html?url=null&theme=null'
+    );
     let queryString = resultURL.search;
     let params = new URLSearchParams(queryString)
     params.set('url', data.input.url)
