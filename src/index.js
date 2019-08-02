@@ -21,7 +21,6 @@ let view = {
   },
   testUrl: function(){
     urlToTest = data.input.url
-    console.log(urlToTest.slice(0,3), urlToTest.slice(0,7), urlToTest.slice(0,6))
     //https://
     if (urlToTest.slice(0,3) === 'www' || urlToTest.slice(0,8) === 'https://' || urlToTest.slice(0,7) === 'http://') {
       return true
@@ -34,11 +33,14 @@ let view = {
       return true
     } else {
       data.dom.toast.classList.add('visible');
+      setTimeout(() => {
+        data.dom.toast.classList.remove('visible')
+      }, 2000);
       return false
     }
   },
   goToResult: function(){
-    let resultURL = new URL(`${window.location.href}/result.html?url=null&theme=null`)
+    let resultURL = new URL(`${window.location.hostname}/result.html?url=null&theme=null`)
     let queryString = resultURL.search;
     let params = new URLSearchParams(queryString)
     params.set('url', data.input.url)

@@ -12,7 +12,6 @@ body {
 	padding:0;
 	height: 100vh;
   background: #2e0927;
-	overflow: hidden;
 	font-family: 'Bangers', cursive;
 	position: relative;
 }
@@ -98,7 +97,7 @@ h2 {
 
 .yay-button {
 	display: block;
-	width: 600px;
+	max-width: 600px;
 	height: 104px;
 	margin: 0 auto;
 	background-image: linear-gradient(to top, #FF2D00, #ff8c00);
@@ -125,7 +124,7 @@ h2 {
 }
 
 .yay-toast {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
