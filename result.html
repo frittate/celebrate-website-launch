@@ -6,10 +6,18 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Celebrate Website Launch!</title>
+    <title>Celebrate Your Website Launch!</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:url" content="" />
+    <meta property="og:title"              content="" />
+    <meta property="og:description"        content="" />
+    <meta property="og:image"              content="./share_image.png" />
+    <meta property="og:type" content="article" />
+
     <link rel="stylesheet" href="./dist/css/index.css">
+    <script src="https://kit.fontawesome.com/ec55ebc6d0.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap" rel="stylesheet">
   </head>
@@ -29,6 +37,21 @@
         Check out your new page right now!
       </a>
     </div>
+    <div class="yay-wrapper__share">
+      <div class="yay-share__button" id="yay-share__button">
+        <i class="fas fa-share-alt"></i>
+      </div>
+    </div>
+
+    <div class="yay-share__container">
+      <div class="yay-share__toast" id="yay-share__toast">
+        <div class="fb-share-button" id="fb-share-button" data-layout="button_count">
+        </div>
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large">Tweet</a>
+      </div>
+    </div>
+
+
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>

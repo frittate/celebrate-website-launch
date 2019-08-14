@@ -97,7 +97,7 @@ h2 {
 
 .yay-button {
 	display: block;
-	max-width: 600px;
+	max-width: 640px;
 	height: 104px;
 	margin: 0 auto;
 	background-image: linear-gradient(to top, #FF2D00, #ff8c00);
@@ -140,6 +140,61 @@ h2 {
 	transform: translateY(0);
 }
 
+.yay-wrapper__share {
+	padding: 24px 16px;
+	text-align: center;
+	max-width: 900px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	margin-top: 160px;
+}
+
+.yay-share__button {
+	width: 60px;
+	height: 60px;
+	background-color: #FF2D00;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.yay-share__button:hover {
+	background-color: #ff8c00;
+}
+
+.yay-share__button i {
+	color: white;
+	font-size: 1.2rem;
+	transform: translateX(-2px);
+}
+
+.yay-share__container {
+	overflow: hidden;
+	height: 100px;
+}
+
+.yay-share__toast {
+	max-width: 900px;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	transform: translateY(-60px);
+	transition: transform 0.2s ease;
+}
+
+.yay-share__toast.is-active {
+	transform: translateY(0)
+}
+
+.yay-share__toast > div{
+	margin-bottom: 8px;
+}
+
+
 
 @media screen and (max-width: 600px) {
 	h1 {
@@ -157,6 +212,11 @@ h2 {
 	.yay-button {
 		font-size: 1.5rem;
 	}
+
+	.yay-options__container input[type=text],
+		.yay-options__container select {
+			font-size: 1.4rem;
+		}
 }
 
 

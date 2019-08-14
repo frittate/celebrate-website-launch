@@ -62,10 +62,16 @@ class ConfettiParticle {
 
 let data = {
   dom: {
-    effectsContainer: document.getElementById('yay-effects__container'),
-    resultsName: document.getElementById('yay-results__url'),
-    resultsLink: document.getElementById('yay-button__goto'),
-    pyroPlaceholder: document.getElementById('yay-pyro__placeholder')
+    effectsContainer: document.getElementById("yay-effects__container"),
+    resultsName: document.getElementById("yay-results__url"),
+    resultsLink: document.getElementById("yay-button__goto"),
+    pyroPlaceholder: document.getElementById("yay-pyro__placeholder"),
+    shareButton: document.getElementById("yay-share__button"),
+    toastContainer: document.getElementById("yay-share__toast")
+  },
+  meta: {
+    title: "",
+    description: ""
   },
   output: {
     url: "",
@@ -157,15 +163,58 @@ let view = {
 }
 
 let controllers = {
+  setMeta: function(){
+    data.meta.description = `Celebrate with me - ${data.output.url} is now live!`;
+    data.meta.title = "Hooray, a new website was born!";
+
+    document.querySelector('meta[property="og:url"]').setAttribute("content", data.output.url)
+
+    document.querySelector('meta[property="og:description"]').setAttribute("content", data.meta.description)
+
+    document.querySelector('meta[property="og:title"]').setAttribute("content", data.meta.title)
+
+  },
+
   listeners: function(){
+    showShareButtons = function(){
+      data.dom.shareButton.addEventListener('click', function(e){
+        data.dom.toastContainer.classList.toggle('is-active')
+      })
+    }
+
+    showShareButtons()
+  },
+
+  social: function(){
+    window.twttr = (function(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+    })(document, "script", "twitter-wjs");
+
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
   }
 }
 
+controllers.setMeta();
+controllers.social();
 view.startTheShow();
 controllers.listeners();
-
-
-
-
-
-
